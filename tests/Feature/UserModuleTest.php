@@ -36,9 +36,9 @@ class UserModuleTest extends TestCase
 
     public function test_it_loads_the_modify_user()
     {
-        $this->get('/usuarios/{id}/edit')
+        $this->get('/usuarios/5/edit')
              ->assertStatus(200)
-             ->assertSee('Modificando el usuario');
+             ->assertSee('Modificando el usuario 5');
     }
 }
 
