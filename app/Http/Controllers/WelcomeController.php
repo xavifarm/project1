@@ -13,6 +13,10 @@ class WelcomeController extends Controller
             return "Bienvenido {$name}, no tienes apodo";
         }
     }
+
+    public function pastel($pastel){
+        
+    }
 }
 
 

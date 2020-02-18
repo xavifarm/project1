@@ -28,7 +28,7 @@ class UserController extends Controller
                               ->with('title', $title);*/
         //OTRA MANERA
         $title = "Listado de Usuarios";
-        return view('users', compact('title','users'));
+        return view('users.index', compact('title','users'));
         //si queremos realizar un var_dump y die se puede comprimir esto
         /*var_dump(compact('title','users'));
         die();
@@ -37,7 +37,7 @@ class UserController extends Controller
     }
 
     public function show($id){
-        return view('users-show', ['id' => $id]);
+        return view('users.show', ['id' => $id]);
     }
 
     public function new(){
