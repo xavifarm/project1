@@ -1,6 +1,7 @@
 <?php
 
 use App\Article;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,11 +24,13 @@ Route::get('/usuarios/{id}/edit', 'UserController@edit')->where('id', '[0-9]+');
 Route::get('/saludo/{name}/{nickname?}', 'WelcomeController@hello');
 Route::get('/pasteles', 'PastelController@index')->name('pasteles');
 Route::get('/pasteles/{id}', 'PastelController@show')->where('id', '[0-9]+');
-Route::get('/articulos', 'ArticleController@index')->name('articulos');
 
-/*Route::get('articulos', function(){
-    return view('articulos.index', ['articles'=>Article::all()]);
-})->name('articulos');*/
+Route::get('articulos', function(){
+    $articulos = ['articulos' => Article::all()];
+    return view('articulos.index', $articulos);
+}); 
+
+
 
 
         

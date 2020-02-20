@@ -7,14 +7,8 @@ use Illuminate\Http\Request;
 class PastelController extends Controller
 {
     public function index(){
-            $pasteles = [
-                'Tarta de queso',
-                'Tiramisú',
-                'Panna Cotta',
-                'Arroz con leche',
-                'Tarta de 3 chocolates'
-            ];
-            return view('pasteles.index')->with('pasteles', $pasteles );  
+        $pasteles = ['pasteles' => \App\Pastel::all()];
+            return view('pasteles.index', $pasteles);  
     }
 
     public function show($id){
